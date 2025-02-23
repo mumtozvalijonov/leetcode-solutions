@@ -3,22 +3,21 @@
 struct Solution;
 
 fn main() {
-    println!("{}", Solution::has_same_digits("1515".to_string()));
+    println!(
+        "{}",
+        Solution::has_same_digits("1515".repeat(2000).to_string())
+    );
 }
 
 impl Solution {
     pub fn has_same_digits(s: String) -> bool {
-        let mut s = s;
-        let mut s = unsafe { s.as_bytes_mut() };
-
-        while s.len() > 2 {
-            let size = s.len();
-            for i in 0..size - 1 {
-                s[i] = (s[i] + s[i + 1] - 2 * b'0') % 10 + b'0';
-            }
-            s = &mut s[..size - 1];
+        let mut digits = s.into_bytes();
+        while digits.len() > 2 {
+            digits = digits
+                .windows(2)
+                .map(|pair| (pair[0] - b'0' + pair[1] - b'0') % 10 + b'0')
+                .collect();
         }
-
-        s[0] == s[1]
+        digits[0] == digits[1]
     }
 }
