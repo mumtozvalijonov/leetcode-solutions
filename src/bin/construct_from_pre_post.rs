@@ -25,7 +25,7 @@ impl TreeNode {
 struct Solution;
 
 fn main() {
-    let tree = Solution::construct_from_pre_post(
+    let _ = Solution::construct_from_pre_post(
         vec![1, 2, 3, 4, 5, 6, 7, 8],
         vec![4, 5, 3, 6, 2, 8, 7, 1],
     );
