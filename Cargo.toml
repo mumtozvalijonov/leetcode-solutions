@@ -20,3 +20,7 @@ path = "src/bin/contest_15_03_25/q2/main.rs"
 [[bin]]
 name = "contest-15-03-25-q3"
 path = "src/bin/contest_15_03_25/q3/main.rs"
+
+[[bin]]
+name = "repair_cars"
+path = "src/bin/repair_cars/main.rs"
