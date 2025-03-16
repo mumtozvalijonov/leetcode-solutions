@@ -4,3 +4,19 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+
+[[bin]]
+name = "house-robber-4"
+path = "src/bin/house_robber_4/main.rs"
+
+[[bin]]
+name = "contest-15-03-25-q1"
+path = "src/bin/contest_15_03_25/q1/main.rs"
+
+[[bin]]
+name = "contest-15-03-25-q2"
+path = "src/bin/contest_15_03_25/q2/main.rs"
+
+[[bin]]
+name = "contest-15-03-25-q3"
+path = "src/bin/contest_15_03_25/q3/main.rs"
