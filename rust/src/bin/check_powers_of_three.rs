@@ -29,16 +29,16 @@ mod tests {
 
     #[test]
     fn test_example1() {
-        assert_eq!(Solution::check_powers_of_three(12), true);
+        assert!(Solution::check_powers_of_three(12));
     }
 
     #[test]
     fn test_example2() {
-        assert_eq!(Solution::check_powers_of_three(91), true);
+        assert!(Solution::check_powers_of_three(91));
     }
 
     #[test]
     fn test_example3() {
-        assert_eq!(Solution::check_powers_of_three(21), false);
+        assert!(!Solution::check_powers_of_three(21));
     }
 }

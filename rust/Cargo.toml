@@ -24,3 +24,11 @@ path = "src/bin/contest_15_03_25/q3/main.rs"
 [[bin]]
 name = "repair_cars"
 path = "src/bin/repair_cars/main.rs"
+
+[[bin]]
+name = "divide_array"
+path = "src/bin/divide_array/main.rs"
+
+[[bin]]
+name = "str_str"
+path = "src/bin/str_str/main.rs"

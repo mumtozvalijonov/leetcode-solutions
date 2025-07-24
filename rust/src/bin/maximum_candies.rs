@@ -34,6 +34,10 @@ impl Solution {
     }
 }
 
+fn main() {
+    println!("{}", Solution::maximum_candies(vec![3, 5, 4], 3))
+}
+
 #[cfg(test)]
 mod tests {
     use super::Solution;
