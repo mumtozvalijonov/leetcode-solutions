@@ -3,8 +3,6 @@ name = "leetcode"
 version = "0.1.0"
 edition = "2021"
 
-[dependencies]
-
 [[bin]]
 name = "house-robber-4"
 path = "src/bin/house_robber_4/main.rs"
@@ -32,3 +30,6 @@ path = "src/bin/divide_array/main.rs"
 [[bin]]
 name = "str_str"
 path = "src/bin/str_str/main.rs"
+
+[dependencies]
+rstest = "0.26.1"
