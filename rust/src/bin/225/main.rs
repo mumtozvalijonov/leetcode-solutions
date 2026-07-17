@@ -1,62 +1,43 @@
 use std::collections::VecDeque;
 
 struct MyStack {
-    pop_queue: VecDeque<i32>,
-    push_queue: VecDeque<i32>,
+    queue: VecDeque<i8>,
 }
 
 impl MyStack {
     fn new() -> Self {
         MyStack {
-            pop_queue: Default::default(),
-            push_queue: Default::default(),
+            queue: Default::default(),
         }
     }
 
     fn push(&mut self, x: i32) {
-        while let Some(v) = self.pop_queue.pop_front() {
-            self.push_queue.push_back(v);
-        }
-
-        self.pop_queue.push_back(x);
+        self.queue.push_back(x as i8);
     }
 
     fn pop(&mut self) -> i32 {
-        if let Some(v) = self.pop_queue.pop_front() {
-            return v;
+        for _ in 0..self.queue.len() - 1 {
+            let v = self.queue.pop_front().unwrap();
+            self.queue.push_back(v);
         }
 
-        while let Some(v) = self.push_queue.pop_front() {
-            self.pop_queue.push_back(v);
-        }
-
-        for _ in 0..self.pop_queue.len() - 1 {
-            self.push_queue
-                .push_back(self.pop_queue.pop_front().unwrap());
-        }
-
-        self.pop()
+        self.queue.pop_front().unwrap() as i32
     }
 
     fn top(&mut self) -> i32 {
-        if let Some(v) = self.pop_queue.front() {
-            return *v;
+        for _ in 0..self.queue.len() - 1 {
+            let v = self.queue.pop_front().unwrap();
+            self.queue.push_back(v);
         }
 
-        while let Some(v) = self.push_queue.pop_front() {
-            self.pop_queue.push_back(v);
-        }
+        let result = self.queue.pop_front().unwrap();
+        self.queue.push_back(result);
 
-        for _ in 0..self.pop_queue.len() - 1 {
-            self.push_queue
-                .push_back(self.pop_queue.pop_front().unwrap());
-        }
-
-        self.top()
+        result as i32
     }
 
     fn empty(&self) -> bool {
-        self.pop_queue.is_empty() && self.push_queue.is_empty()
+        self.queue.is_empty()
     }
 }
 
